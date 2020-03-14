@@ -33,10 +33,11 @@ public class UsersController {
 		}
 		
 		StringBuilder messagesBuilder = new StringBuilder();
-		messages.forEach(msg -> {
-			messagesBuilder.append(msg.getMessage());
+		for(int i = messages.size() - 1; i >= 0; i--) {
+			messagesBuilder.append(messages.get(i).getMessage());
 			messagesBuilder.append("<br>");
-		});
+		}
+		
 		return messagesBuilder.toString();
 	}
 }
